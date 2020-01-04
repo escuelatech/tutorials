@@ -1,7 +1,11 @@
 package com.escuela.demo.spring.config;
 
+import com.hazelcast.client.HazelcastClient;
+import com.hazelcast.client.config.ClientConfig;
 import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
+
+import com.hazelcast.core.IMap;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,16 +17,18 @@ import org.springframework.data.keyvalue.core.KeyValueTemplate;
 import javax.annotation.PostConstruct;
 
 @Configuration
-@EnableHazelcastRepositories("com.escuela.demo.hazlecast.repository")
+//@EnableHazelcastRepositories("com.escuela.demo.hazlecast.repository")
 public class HazelCastConfig {
 
-    @PostConstruct
-    public void init(){
-    }
+//    @Bean
+//    HazelcastInstance hazelcastInstance() {
+//        return Hazelcast.newHazelcastInstance();
+//    }
 
     @Bean
     HazelcastInstance hazelcastInstance() {
-        return Hazelcast.newHazelcastInstance();
+        ClientConfig clientConfig = new ClientConfig();
+        return HazelcastClient.newHazelcastClient(clientConfig);
     }
 
     @Bean
