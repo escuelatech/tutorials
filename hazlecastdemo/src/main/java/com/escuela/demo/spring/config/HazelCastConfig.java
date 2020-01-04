@@ -17,7 +17,7 @@ import org.springframework.data.keyvalue.core.KeyValueTemplate;
 import javax.annotation.PostConstruct;
 
 @Configuration
-//@EnableHazelcastRepositories("com.escuela.demo.hazlecast.repository")
+@EnableHazelcastRepositories("com.escuela.demo.hazlecast.repository")
 public class HazelCastConfig {
 
 //    @Bean

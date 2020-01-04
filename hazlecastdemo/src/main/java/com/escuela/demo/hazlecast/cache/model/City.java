@@ -1,16 +1,15 @@
 package com.escuela.demo.hazlecast.cache.model;
 
 import com.querydsl.core.annotations.QueryEntity;
-//import org.springframework.data.annotation.Id;
-//import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Id;
 
 import java.io.Serializable;
 import java.math.BigInteger;
 
-//@QueryEntity
+@QueryEntity
 public class City implements Serializable,Comparable {
 
-//    @   Id
+    @Id
     private String name;
     private String country;
     private BigInteger min;

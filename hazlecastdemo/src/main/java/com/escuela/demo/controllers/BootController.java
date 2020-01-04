@@ -22,7 +22,7 @@ public class BootController {
     @Autowired
     HazelcastInstance hazelcastInstance;
 
-    @GetMapping(value = "/getcity")
+    @GetMapping(value = "/findcity")
     public @ResponseBody  Collection <City> getCityNames() {
         IMap map = hazelcastInstance.getMap("employee");
         Collection <City> coll=  map.values( new SqlPredicate( "min <=2001 AND max > 2001" ) );
