@@ -1,5 +1,6 @@
 package com.escuela.demo.controllers;
 
+//import com.escuela.demo.hazlecast.cache.model.City;
 import com.escuela.demo.hazlecast.cache.model.City;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
@@ -24,7 +25,7 @@ public class BootController {
     @GetMapping(value = "/getcity")
     public @ResponseBody  Collection <City> getCityNames() {
         IMap map = hazelcastInstance.getMap("employee");
-        Collection <City> coll=  map.values( new SqlPredicate( "min <=3001 AND max > 3001" ) );
+        Collection <City> coll=  map.values( new SqlPredicate( "min <=2001 AND max > 2001" ) );
         return coll;
     }
 

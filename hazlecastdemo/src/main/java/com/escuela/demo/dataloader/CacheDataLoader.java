@@ -1,6 +1,7 @@
 package com.escuela.demo.dataloader;
 
-import com.escuela.demo.hazlecast.cache.model.City;
+//import com.escuela.demo.hazlecast.cache.model.City;
+import com.escuela.hazelcast.domain.models.City;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
 import org.springframework.beans.factory.annotation.Autowired;
