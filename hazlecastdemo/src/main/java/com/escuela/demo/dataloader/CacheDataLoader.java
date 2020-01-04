@@ -20,7 +20,7 @@ public class CacheDataLoader {
 
     @PostConstruct
     public void loadDataToHazleCast(){
-        IMap map = hazelcastInstance.getMap("employee");
+        IMap map = hazelcastInstance.getMap("country");
         map.put("1000",new City().setCountry("Uganda").setName("Africa").setMin(new BigInteger("1000")).setMax(new BigInteger("1999")));
         map.put("2000",new City().setCountry("New York").setName("United States").setMin(new BigInteger("2000")).setMax(new BigInteger("2999")));
         System.err.println("******** DATA LOADED TO HAZLECAST **********");
