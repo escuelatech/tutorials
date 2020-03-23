@@ -21,13 +21,15 @@ import javax.annotation.PostConstruct;
 public class HazelCastConfig {
 
 //    @Bean
-//    HazelcastInstance hazelcastInstance() {
-//        return Hazelcast.newHazelcastInstance();
-//    }
+    HazelcastInstance hazelcastServerInstance() {
+        return Hazelcast.newHazelcastInstance();
+    }
 
     @Bean
     HazelcastInstance hazelcastInstance() {
         ClientConfig clientConfig = new ClientConfig();
+//      clientConfig.setClusterName("dev");
+        clientConfig.getNetworkConfig().addAddress("192.168.1.69", "192.168.1.69:5702");
         return HazelcastClient.newHazelcastClient(clientConfig);
     }
 

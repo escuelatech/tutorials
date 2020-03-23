@@ -12,7 +12,4 @@ public class HazlecastdemoApplication {
         SpringApplication.run(HazlecastdemoApplication.class, args);
     }
 
-    public static void main(){
-    }
-
 }
