@@ -1,4 +1,4 @@
-package com.escuela.java8.hacks;
+package com.escuela.java8.hacks.serviceloader;
 
 import java.sql.Driver;
 import java.util.Iterator;
